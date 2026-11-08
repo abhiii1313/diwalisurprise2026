@@ -1,13 +1,13 @@
 // Firebase project configuration.
 // Replace the placeholder values with the config from your Firebase project.
 export const firebaseConfig = {
-  apiKey: "PASTE_YOUR_FIREBASE_API_KEY",
-  authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_PROJECT.appspot.com",
-  messagingSenderId: "PASTE_YOUR_MESSAGING_SENDER_ID",
-  appId: "PASTE_YOUR_APP_ID"
+  apiKey: "AIzaSyDRZuF-Q6XgiR6waeEAFZXXi8xLMtKU0RA",
+  authDomain: "diwalisurprise2026.firebaseapp.com",
+  projectId: "diwalisurprise2026",
+  storageBucket: "diwalisurprise2026.firebasestorage.app",
+  messagingSenderId: "1026371752237",
+  appId: "1:1026371752237:web:349905cd6665be61a783a4"
 };
 
 // Use the same admin email in firestore.rules.
-export const ADMIN_EMAIL = "YOUR_ADMIN_EMAIL@example.com";
+export const ADMIN_EMAIL = "abhiii20072007@gmail.com";
