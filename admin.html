@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Admin | Diwali Surprise</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="admin-shell">
+    <header><p class="eyebrow">DIWALI SURPRISE 2026</p><h1>Private dashboard</h1><p class="muted">Visitor activity overview</p></header>
+    <section id="loginPanel" class="panel">
+      <h2>Admin sign in</h2>
+      <p class="muted">Sign in with the admin email you configure in Firebase Authentication.</p>
+      <input id="email" type="email" placeholder="Admin email" autocomplete="username">
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+      <button id="loginButton">Sign in</button>
+      <p id="loginError" class="error"></p>
+    </section>
+    <section id="dashboardPanel" hidden>
+      <div class="toolbar"><p id="signedInAs" class="muted"></p><button id="logoutButton" class="secondary">Sign out</button></div>
+      <div class="stats">
+        <article class="panel"><span>Total page visits</span><strong id="totalVisits">—</strong></article>
+        <article class="panel"><span>Unique browsers</span><strong id="uniqueVisitors">—</strong></article>
+        <article class="panel"><span>Named sessions</span><strong id="namedSessions">—</strong></article>
+        <article class="panel"><span>Completed greetings</span><strong id="completed">—</strong></article>
+      </div>
+      <section class="panel table-panel">
+        <div class="table-heading"><h2>Visitor sessions</h2><button id="refreshButton" class="secondary">Refresh</button></div>
+        <p class="muted small">Names appear only when visitors enter them on the greeting page.</p>
+        <div class="table-scroll"><table><thead><tr><th>Name</th><th>First visit</th><th>Diya progress</th><th>Status</th></tr></thead><tbody id="visitorRows"><tr><td colspan="4">Loading…</td></tr></tbody></table></div>
+      </section>
+      <p id="dashboardError" class="error"></p>
+    </section>
+    <p class="foot muted">Keep this page private. Do not share your admin password.</p>
+  </main>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

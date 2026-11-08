@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10091f">
+  <title>Diwali Surprise 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="effects" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="shell">
+    <div class="topline"><span class="tiny-star">✦</span> DIWALI SURPRISE <span class="year">2026</span> <span class="tiny-star">✦</span></div>
+    <button class="music-toggle" id="musicToggle" type="button" aria-pressed="false" aria-label="Turn background music on">♫ <span id="musicLabel">MUSIC OFF</span></button>
+
+    <section class="screen active" id="welcomeScreen">
+      <div class="eyebrow">A LITTLE LIGHT, A LOT OF LOVE</div>
+      <div class="hero-diya" aria-hidden="true">
+        <div class="hero-flame"></div><div class="hero-wick"></div>
+        <div class="hero-bowl"><span></span></div>
+        <div class="hero-reflection"></div>
+      </div>
+      <h1 class="welcome-title">A festival of <em>light</em><br>is waiting for you.</h1>
+      <p class="subcopy">Before the magic begins, tell us what we should call you.</p>
+      <form id="nameForm" class="name-form">
+        <label class="sr-only" for="visitorName">Your name</label>
+        <input id="visitorName" maxlength="32" autocomplete="given-name" placeholder="Enter your name" required>
+        <button class="gold-button" type="submit">LET THE MAGIC BEGIN <span>→</span></button>
+      </form>
+      <p class="privacy-note">Your entered name and your progress through this greeting may be recorded by the creator.</p>
+    </section>
+
+    <section class="screen" id="diyaScreen">
+      <div class="eyebrow">LIGHT UP THE FESTIVAL</div>
+      <h2 class="section-title">One by one, let the light in.</h2>
+      <p class="subcopy">Tap each diya and watch the night come alive.</p>
+      <div class="diya-grid" id="diyaGrid">
+        <button class="diya-card" data-diya="0" aria-label="Light diya 1"><span class="diya-number">01</span><span class="diya-art"><i class="flame"></i><i class="wick"></i><i class="bowl"></i><i class="pool"></i></span><span class="diya-label">HOPE</span></button>
+        <button class="diya-card" data-diya="1" aria-label="Light diya 2"><span class="diya-number">02</span><span class="diya-art"><i class="flame"></i><i class="wick"></i><i class="bowl"></i><i class="pool"></i></span><span class="diya-label">HAPPINESS</span></button>
+        <button class="diya-card" data-diya="2" aria-label="Light diya 3"><span class="diya-number">03</span><span class="diya-art"><i class="flame"></i><i class="wick"></i><i class="bowl"></i><i class="pool"></i></span><span class="diya-label">SUCCESS</span></button>
+        <button class="diya-card" data-diya="3" aria-label="Light diya 4"><span class="diya-number">04</span><span class="diya-art"><i class="flame"></i><i class="wick"></i><i class="bowl"></i><i class="pool"></i></span><span class="diya-label">PEACE</span></button>
+        <button class="diya-card" data-diya="4" aria-label="Light diya 5"><span class="diya-number">05</span><span class="diya-art"><i class="flame"></i><i class="wick"></i><i class="bowl"></i><i class="pool"></i></span><span class="diya-label">PROSPERITY</span></button>
+      </div>
+      <div class="progress-wrap"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span id="progressText">0 / 5 LIGHTED</span></div>
+      <p class="hint" id="diyaHint">Every light carries a wish.</p>
+    </section>
+
+    <section class="screen final-screen" id="finalScreen">
+      <div class="eyebrow">A WISH MADE JUST FOR YOU</div>
+      <div class="final-orbit" aria-hidden="true"><div class="orbit-ring"></div><div class="final-diya"><i class="final-flame"></i><i class="final-bowl"></i></div></div>
+      <p class="final-kicker">THE NIGHT IS YOURS,</p>
+      <h2 class="happy-title">Happy <em>Diwali!</em></h2>
+      <p class="for-name" id="forName"></p>
+      <div class="gold-divider"><span>✦</span></div>
+      <p class="wish">May your life shine as bright as these lights.</p>
+      <p class="wish second-wish">Wishing you happiness, success and endless prosperity.</p>
+      <p class="hindi">शुभ दीपावली</p>
+      <p class="sender-signature" style="margin: 18px 0 24px; color: #e8c77e; font-family: Georgia, serif; font-size: 1.05rem; font-style: italic; letter-spacing: .04em;">With love,<br><strong style="display:inline-block; margin-top:6px; font-style:normal; letter-spacing:.08em;">Abhishek Kumar</strong></p>
+      <button class="replay-button" id="replayButton">EXPERIENCE AGAIN ↗</button>
+    </section>
+
+    <footer class="footer">MADE WITH LIGHT <span>✦</span> SHARED WITH LOVE</footer>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

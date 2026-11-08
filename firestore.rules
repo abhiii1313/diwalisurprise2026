@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == "YOUR_ADMIN_EMAIL@example.com";
+    }
+
+    // Public visitors can add page-view events, but only the admin can read them.
+    match /page_views/{viewId} {
+      allow create: if request.resource.data.keys().hasAll(['visitorId', 'sessionId', 'createdAt', 'page']);
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Visitors can create/update their own random session document ID.
+    // Only the admin account can read or delete visitor records.
+    match /visitor_sessions/{sessionId} {
+      allow create, update: if request.resource.data.keys().hasAll([
+        'visitorId', 'name', 'diyaCount', 'completed', 'createdAt', 'updatedAt'
+      ]) && request.resource.data.name is string
+         && request.resource.data.name.size() <= 32
+         && request.resource.data.diyaCount is int
+         && request.resource.data.diyaCount >= 0
+         && request.resource.data.diyaCount <= 5;
+      allow read, delete: if isAdmin();
+    }
+  }
+}
